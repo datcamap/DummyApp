@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">DummyApp</string>
     <string name="btn1">buTTon</string>
+    <string name="nameSetting">settingButton</string>
+    <string name="iconTemper">temperatureIcon</string>
+    <string name="iconHeater">heaterIcon</string>
+    <string name="iconChiller">chillerIcon</string>
+    <string name="buttonBorder">buttBorder</string>
     <string name="accountName">BecaAqua</string>
     <string name="loginPass">Admjnkui34</string>
     <string name="wifi">Wifi</string>
@@ -9,10 +14,18 @@
     <string name="value_pH">7.3</string>
     <string name="name_TDS">TDS</string>
     <string name="value_TDS">111</string>
-    <string name="name_Detail"><![CDATA[Detail>>>]]></string>
+    <string name="name_Detail">Detail>></string>
     <string name="stateHeater">ON</string>
     <string name="nameHeater">Heater</string>
     <string name="stateChiller">OFF</string>
     <string name="nameChiller">Chiller</string>
     <string name="nameMode">Mode</string>
+    <string name="autoMode">Automatic</string>
+    <string name="manuMode">Manual</string>
+    <string name="valueTemperature">23</string>
+    <string name="symbolDegree">°</string>
+    <string name="nameTemperature">Temperature</string>
+    <string name="btn2">modeButt</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
 </resources>

@@ -29,15 +29,19 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="715dp" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp"
+        android:padding="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
@@ -46,16 +50,21 @@
             android:id="@+id/buttonSetting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:backgroundTint="@color/blackbutgreen"
+            android:background="@drawable/bored_leftside_only"
+            android:backgroundTint="@color/blk75"
             android:baselineAlignBottom="false"
+            android:contentDescription="@string/nameSetting"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/settings_4_line" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/wifiName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -63,14 +72,15 @@
             android:text="@string/name_Wifi"
             android:textSize="21sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/iconWifi"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/iconWifi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/blackbutgreen"
             android:contentDescription="@string/wifi"
@@ -88,6 +98,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_16dp"
         android:backgroundTint="@color/white"
+        android:padding="16dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -96,28 +107,72 @@
             android:id="@+id/seekBar2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:max="28"
+            android:padding="32dp"
+            android:progress="23"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-        <TextView
-            android:id="@+id/textView13"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="160dp"
-            tools:layout_editor_absoluteY="221dp" />
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView3"
+            <TextView
+                android:id="@+id/temperValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_light"
+                android:text="@string/valueTemperature"
+                android:textSize="84sp" />
+
+            <TextView
+                android:id="@+id/degree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_light"
+                android:text="@string/symbolDegree"
+                android:textSize="84sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans_light"
-            android:text="TextView"
-            android:textSize="84sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="94dp" />
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <ImageView
+                android:id="@+id/iconTemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/iconTemper"
+                app:srcCompat="@drawable/temp_hot_line" />
+
+            <TextView
+                android:id="@+id/nameTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="@string/nameTemperature"
+                android:textSize="30sp" />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -126,11 +181,27 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:background="@color/white"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/buttonMode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:background="@android:color/transparent"
+            android:text="@string/btn2"
+            android:textSize="0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
@@ -138,25 +209,25 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_light"
             android:text="@string/nameMode"
+            android:textColor="@color/blackbutgreen"
             android:textSize="30sp"
-            tools:layout_editor_absoluteX="31dp"
-            tools:layout_editor_absoluteY="31dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/modeState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="182dp"
-            tools:layout_editor_absoluteY="48dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/autoMode"
+            android:textColor="@color/aquagren"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonMode"
+            app:layout_constraintStart_toStartOf="@+id/buttonMode"
+            app:layout_constraintTop_toTopOf="@+id/buttonMode" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="715dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
@@ -174,7 +245,9 @@
             android:background="@drawable/rounded_corner_16dp"
             android:backgroundTint="@color/white"
             android:orientation="vertical"
-            android:padding="8dp"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -182,6 +255,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bored_bottom_only"
+                android:backgroundTint="@color/blk75"
                 android:padding="8dp">
 
                 <TextView
@@ -211,6 +286,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/bored_bottom_only"
+                android:backgroundTint="@color/blk75"
                 android:padding="8dp">
 
                 <TextView
@@ -238,14 +315,17 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp">
+                android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/buttonDetail"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent" />
+                    android:layout_height="48dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/btn1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -274,6 +354,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/heatButtHolder"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
@@ -285,29 +366,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"
+                    android:text="@string/btn1"
+                    android:textSize="0sp"
                     tools:layout_editor_absoluteY="27dp" />
 
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:contentDescription="@string/buttonBorder"
                     app:srcCompat="@drawable/bored_all_side"
                     tools:layout_editor_absoluteY="27dp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nothingok"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="8dp"
                     tools:layout_editor_absoluteY="27dp">
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/heatOnIndicator"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/open_sans_extrabold"
                         android:text="@string/stateHeater"
                         android:textAllCaps="true"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -316,6 +401,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/blackbutgreen"
+                        android:contentDescription="@string/iconHeater"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/fire_line" />
@@ -335,6 +421,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/chillButtHolder"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
@@ -347,6 +434,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#00FFFFFF"
+                    android:text="@string/btn1"
+                    android:textSize="0sp"
                     tools:layout_editor_absoluteX="20dp"
                     tools:layout_editor_absoluteY="12dp" />
 
@@ -354,6 +443,7 @@
                     android:id="@+id/imageView6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:contentDescription="@string/buttonBorder"
                     app:srcCompat="@drawable/bored_all_side"
                     tools:layout_editor_absoluteX="7dp" />
 
@@ -363,7 +453,7 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/chillOnIndicator"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/open_sans_light"
@@ -377,6 +467,7 @@
                         android:id="@+id/imageView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/iconChiller"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/snowy_line" />
