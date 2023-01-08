@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DummyApp</string>
+    <string name="btn1">buTTon</string>
+    <string name="accountName">BecaAqua</string>
+    <string name="loginPass">Admjnkui34</string>
+    <string name="wifi">Wifi</string>
+    <string name="name_Wifi">ThaoAn/2.4G</string>
+    <string name="name_pH">pH</string>
+    <string name="value_pH">7.3</string>
+    <string name="name_TDS">TDS</string>
+    <string name="value_TDS">111</string>
+    <string name="name_Detail"><![CDATA[Detail>>>]]></string>
+    <string name="stateHeater">ON</string>
+    <string name="nameHeater">Heater</string>
+    <string name="stateChiller">OFF</string>
+    <string name="nameChiller">Chiller</string>
+    <string name="nameMode">Mode</string>
+</resources>
