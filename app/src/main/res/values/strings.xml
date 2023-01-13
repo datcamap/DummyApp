@@ -23,7 +23,7 @@
     <string name="autoMode">Automatic</string>
     <string name="manuMode">Manual</string>
     <string name="valueTemperature">23</string>
-    <string name="symbolDegree">°</string>
+    <string name="symbolDegree">%1$d°</string>
     <string name="nameTemperature">Temperature</string>
     <string name="btn2">modeButt</string>
     <string name="on">ON</string>

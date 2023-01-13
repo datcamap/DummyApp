@@ -105,55 +105,37 @@
 
         <SeekBar
             android:id="@+id/seekBar2"
-            android:layout_width="0dp"
+            android:layout_width="256dp"
             android:layout_height="wrap_content"
-            android:max="28"
-            android:padding="32dp"
-            android:progress="23"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:max="13"
+            android:padding="8dp"
+            android:progress="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <TextView
+            android:id="@+id/temperValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/symbolDegree"
+            android:textSize="84sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/temperValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_light"
-                android:text="@string/valueTemperature"
-                android:textSize="84sp" />
-
-            <TextView
-                android:id="@+id/degree"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans_light"
-                android:text="@string/symbolDegree"
-                android:textSize="84sp" />
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toBottomOf="@+id/temperValue">
 
             <ImageView
                 android:id="@+id/iconTemp"
@@ -172,6 +154,18 @@
                 android:text="@string/nameTemperature"
                 android:textSize="30sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/desiredTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/symbolDegree"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/seekBar2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/seekBar2"
+            app:layout_constraintTop_toTopOf="@+id/seekBar2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -332,6 +326,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
+                    android:gravity="center"
                     android:text="@string/name_Detail"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -389,7 +384,7 @@
                         android:id="@+id/heatOnIndicator"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/open_sans_extrabold"
+                        android:fontFamily="@font/open_sans_bold"
                         android:text="@string/stateHeater"
                         android:textAllCaps="true"
                         android:textSize="20sp"
