@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             @Override
             public void onFailure(@NonNull Call<AquaAnswersResponse> call, @NonNull Throwable t) {
-                Log.d("MainActivity", "error loading from API");
+                Log.d("MainActivity", t.getMessage().toString());
             }
         });
     }

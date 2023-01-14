@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.PATCH;
 
 public interface AquaService {
-    @GET("/answers?order=desc&sort=activity&site=stackoverflow")
+    @GET("devices/7")
     Call<AquaAnswersResponse> getAnswers();
     @PATCH("/devices/7")
     Call<AquaAnswersResponse> patchRequest();
