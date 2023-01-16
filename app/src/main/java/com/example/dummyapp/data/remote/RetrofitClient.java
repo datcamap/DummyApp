@@ -13,6 +13,7 @@ public class RetrofitClient {
         if (retrofit==null) {
             Gson gson = new GsonBuilder()
                     .setLenient()
+                    .disableHtmlEscaping()
                     .create();
             retrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)

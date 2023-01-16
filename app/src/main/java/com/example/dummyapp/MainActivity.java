@@ -17,8 +17,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.example.dummyapp.data.model.AquaAnswersResponse;
+import com.example.dummyapp.data.model.Desired;
 import com.example.dummyapp.data.remote.ApiUtils;
 import com.example.dummyapp.data.remote.AquaService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean onHeat = false;
     boolean onChill = false;
     boolean onAuto = false;
-    int desiredTemper = 22;
+    int desiredTemper = 15;
     public AquaService mService;
 
     @Override
@@ -54,14 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         modeButt.setOnClickListener(this);
         SeekBar yourSeekBar= findViewById(R.id.seekBar2);
         yourSeekBar.setOnSeekBarChangeListener(new seekHandler());
-
-        yourSeekBar.setProgress(desiredTemper-minTemper);
-        String temper = getString(R.string.symbolDegree,desiredTemper);
-        ((TextView)findViewById(R.id.desiredTemperature)).setText(temper);
-
-        heatButtHandler();
-        chillButtHandler();
-        autoButtHandler();
     }
 
     @Override
@@ -107,20 +102,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mService.getAnswers().enqueue(new Callback<AquaAnswersResponse>() {
             @Override
             public void onResponse(@NonNull Call<AquaAnswersResponse> call, @NonNull Response<AquaAnswersResponse> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
+                    Gson gson = new GsonBuilder().create();
+                    Desired desired = gson.fromJson(response.body().getData().getDesired(), Desired.class);
+                    desiredTemper = desired.getSetTemper();
+                    onHeat = desired.getHeater();
+                    onChill = desired.getChiller();
+                    onAuto = desired.getAutoMode();
+                    seekbarTextHandler();
+                    heatButtHandler();
+                    chillButtHandler();
+                    autoButtHandler();
                     Log.d("MainActivity", "posts loaded from API");
-                    Log.d("MainActivity", response.body().getData().getDesired());
-                }else {
-                    int statusCode  = response.code();
+                } else {
+                    int statusCode = response.code();
                     // handle request errors depending on status code
                     Log.d("MainActivity", response.toString());
                 }
             }
+
             @Override
             public void onFailure(@NonNull Call<AquaAnswersResponse> call, @NonNull Throwable t) {
                 Log.d("MainActivity", t.getMessage());
             }
         });
+    }
+
+    public void seekbarTextHandler(){
+        SeekBar theSeekBar= findViewById(R.id.seekBar2);
+        theSeekBar.setProgress(desiredTemper-minTemper);
+        String temper = getString(R.string.symbolDegree,desiredTemper);
+        ((TextView)findViewById(R.id.desiredTemperature)).setText(temper);
     }
 
     public void autoButtHandler(){
