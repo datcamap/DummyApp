@@ -109,15 +109,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onResponse(@NonNull Call<AquaAnswersResponse> call, @NonNull Response<AquaAnswersResponse> response) {
                 if(response.isSuccessful()) {
                     Log.d("MainActivity", "posts loaded from API");
+                    Log.d("MainActivity", response.body().getData().getDesired());
                 }else {
                     int statusCode  = response.code();
                     // handle request errors depending on status code
-                    Log.d("MainActivity", "Boo!");
+                    Log.d("MainActivity", response.toString());
                 }
             }
             @Override
             public void onFailure(@NonNull Call<AquaAnswersResponse> call, @NonNull Throwable t) {
-                Log.d("MainActivity", t.getMessage().toString());
+                Log.d("MainActivity", t.getMessage());
             }
         });
     }

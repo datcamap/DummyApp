@@ -25,7 +25,7 @@ public class Data {
     private Integer cloudToDeviceMessages;
     @SerializedName("desired")
     @Expose
-    private Desired desired;
+    private String desired;
     @SerializedName("reported")
     @Expose
     private String reported;
@@ -78,11 +78,11 @@ public class Data {
         this.cloudToDeviceMessages = cloudToDeviceMessages;
     }
 
-    public Desired getDesired() {
+    public String getDesired() {
         return desired;
     }
 
-    public void setDesired(Desired desired) {
+    public void setDesired(String desired) {
         this.desired = desired;
     }
 
