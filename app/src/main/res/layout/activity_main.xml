@@ -114,12 +114,12 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         <TextView
-            android:id="@+id/temperValue"
+            android:id="@+id/temperDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/open_sans_light"
-            android:text="@string/symbolDegree"
+            android:text="@string/stringPlaceHolderWithDegreeSymbol"
             android:textSize="84sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +135,7 @@
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/temperValue">
+            app:layout_constraintTop_toBottomOf="@+id/temperDisplay">
 
             <ImageView
                 android:id="@+id/iconTemp"
@@ -160,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_extrabold"
-            android:text="@string/symbolDegree"
+            android:text="@string/stringPlaceHolderWithDegreeSymbol"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/seekBar2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -265,7 +265,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/pHDisplay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_semibold"
@@ -296,7 +296,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/tdsDisplay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_semibold"
@@ -314,7 +314,7 @@
                 <Button
                     android:id="@+id/buttonDetail"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="0dp"
                     android:background="@android:color/transparent"
                     android:text="@string/btn1"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -3,7 +3,7 @@ package com.example.dummyapp.data.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class AquaAnswersResponse {
+public class AquaDeviceTwin {
 
     @SerializedName("data")
     @Expose
